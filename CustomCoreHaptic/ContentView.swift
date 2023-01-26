@@ -28,129 +28,123 @@ public struct ContentView: View {
     // MARK: - View
     
     public var body: some View {
-        VStack {
-            HStack {
-                Text("Core Haptics")
-                    .font(.system(size: Constants.labelFontSize, weight: .bold, design: .default))
-                Spacer()
-            }
-            VStack {
-                Spacer()
-                switch selectedHapticType {
-                case .transient:
-                    VStack(alignment: .leading) {
-                        RectanglesRowView(selectedHapticType: $selectedHapticType)
-                        .overlay(
-                            Divider().background(.gray),
-                            alignment: .center
-                        )
-                    }
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
                     Spacer()
-                    
-                case .continuous:
-                    VStack(alignment: .leading) {
-                        LineChartView(data: $testChartData)
-                            .padding(Constants.lineChartInsets)
+                    switch selectedHapticType {
+                    case .transient:
+                        VStack(alignment: .leading) {
+                            RectanglesRowView(selectedHapticType: $selectedHapticType)
+                            .overlay(
+                                Divider().background(.gray),
+                                alignment: .center
+                            )
+                        }
+                        Spacer()
+                        
+                    case .continuous:
+                        VStack(alignment: .leading) {
+                            LineChartView(data: $testChartData)
+                                .padding(Constants.lineChartInsets)
+                        }
+                    case .dynamic:
+                        VStack(alignment: .leading) {
+                            RectanglesRowView(selectedHapticType: $selectedHapticType)
+                        }
                     }
-                case .dynamic:
-                    VStack(alignment: .leading) {
-                        RectanglesRowView(selectedHapticType: $selectedHapticType)
+                }
+                .frame(
+                    width: Constants.patternGroupWidth,
+                    height: Constants.patternGroupHeight
+                )
+                .overlay(
+                    Divider().background(.gray),
+                    alignment: .top
+                )
+                .overlay(
+                    Divider().background(.gray),
+                    alignment: .bottom
+                )
+                .overlay(
+                    Rectangle()
+                        .frame(width: 1, height: nil, alignment: .leading)
+                        .foregroundColor(.gray)
+                        .padding(.top, Constants.leftBorderTopPadding),
+                    alignment: .leading
+                )
+                .overlay(
+                    HStack(spacing: Constants.buttonsStackSpacing) {
+                        Spacer()
+                        Button(action: test) {
+                            Image(systemName: "minus")
+                                .resizable()
+                                .frame(width: Constants.buttonWidth, height: 1)
+                        }
+                        Button(action: test) {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
+                        }
                     }
+                    .padding(),
+                    alignment: .topTrailing
+                )
+                .overlay(
+                    HStack(spacing: Constants.buttonsStackSpacing) {
+                        Spacer()
+                        Button(action: test) {
+                            Image(systemName: "arrow.counterclockwise")
+                                .resizable()
+                                .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
+                        }
+                        Button(action: test) {
+                            Image(systemName: "play")
+                                .resizable()
+                                .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
+                        }
+                    }
+                    .padding(),
+                    alignment: .bottomTrailing
+                )
+                
+                VStack {
+                    Picker("Select haptic type", selection: $selectedHapticType) {
+                        ForEach(HapticType.allCases, id: \.self) {
+                            Text($0.title)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                .padding(Constants.pickerInsets)
+                
+                VStack(alignment: .leading) {
+                    HapticSettingView(
+                        hapticSetting: .intensity,
+                        selectedHapticType: selectedHapticType,
+                        settingValue: $intensitySettingValue
+                    )
+                    Divider()
+                        .background(.gray)
+                        .padding()
+                    HapticSettingView(
+                        hapticSetting: .sharpness,
+                        selectedHapticType: selectedHapticType,
+                        settingValue: $sharpnessSettingValue
+                    )
+                    Divider()
+                        .background(.gray)
+                        .padding()
+                    HapticSettingView(
+                        hapticSetting: .timing,
+                        selectedHapticType: selectedHapticType,
+                        settingValue: $timingSettingValue
+                    )
                 }
             }
-            .frame(
-                width: Constants.patternGroupWidth,
-                height: Constants.patternGroupHeight
-            )
-            .overlay(
-                Divider().background(.gray),
-                alignment: .top
-            )
-            .overlay(
-                Divider().background(.gray),
-                alignment: .bottom
-            )
-            .overlay(
-                Rectangle()
-                    .frame(width: 1, height: nil, alignment: .leading)
-                    .foregroundColor(.gray)
-                    .padding(.top, Constants.leftBorderTopPadding),
-                alignment: .leading
-            )
-            .overlay(
-                HStack(spacing: Constants.buttonsStackSpacing) {
-                    Spacer()
-                    Button(action: test) {
-                        Image(systemName: "minus")
-                            .resizable()
-                            .frame(width: Constants.buttonWidth, height: 1)
-                    }
-                    Button(action: test) {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
-                    }
-                }
-                .padding(),
-                alignment: .topTrailing
-            )
-            .overlay(
-                HStack(spacing: Constants.buttonsStackSpacing) {
-                    Spacer()
-                    Button(action: test) {
-                        Image(systemName: "arrow.counterclockwise")
-                            .resizable()
-                            .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
-                    }
-                    Button(action: test) {
-                        Image(systemName: "play")
-                            .resizable()
-                            .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
-                    }
-                }
-                .padding(),
-                alignment: .bottomTrailing
-            )
-            
-            VStack {
-                Picker("Select haptic type", selection: $selectedHapticType) {
-                    ForEach(HapticType.allCases, id: \.self) {
-                        Text($0.title)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }
-            .padding(Constants.pickerInsets)
-            
-            VStack(alignment: .leading) {
-                HapticSettingView(
-                    hapticSetting: .intensity,
-                    selectedHapticType: selectedHapticType,
-                    settingValue: $intensitySettingValue
-                )
-                Divider()
-                    .background(.gray)
-                    .padding()
-                HapticSettingView(
-                    hapticSetting: .sharpness,
-                    selectedHapticType: selectedHapticType,
-                    settingValue: $sharpnessSettingValue
-                )
-                Divider()
-                    .background(.gray)
-                    .padding()
-                HapticSettingView(
-                    hapticSetting: .timing,
-                    selectedHapticType: selectedHapticType,
-                    settingValue: $timingSettingValue
-                )
-                Divider()
-                    .background(.gray)
-                    .padding()
-            }
+            .padding()
+            .navigationBarTitle(Text("Core Haptic"))
         }
-        .padding()
-        
     }
 }
 
