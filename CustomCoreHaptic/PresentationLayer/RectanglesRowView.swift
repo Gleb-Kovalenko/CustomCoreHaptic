@@ -19,17 +19,15 @@ public struct RectanglesRowView: View {
     // MARK: - View
     
     public var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: selectedHapticType == .transient ? Constants.transientStackSpacing : 0) {
-                ForEach(0..<5) { _ in
-                    Rectangle()
-                        .frame(
-                            width: Constants.rectangleWidth * Double.random(in: 0.5...1),
-                            height: Constants.rectangleHeight * Double.random(in: 0.5...1),
-                            alignment: .leading
-                        )
-                        .foregroundColor(.gray)
-                }
+        HStack(spacing: selectedHapticType == .transient ? Constants.transientStackSpacing : 0) {
+            ForEach(0..<10) { _ in
+                Rectangle()
+                    .frame(
+                        width: Constants.rectangleWidth * Double.random(in: 0.5...1),
+                        height: Constants.rectangleHeight * Double.random(in: 0.5...1),
+                        alignment: .leading
+                    )
+                    .foregroundColor(.gray)
             }
         }
     }

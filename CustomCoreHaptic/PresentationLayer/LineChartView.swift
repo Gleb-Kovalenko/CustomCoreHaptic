@@ -25,13 +25,14 @@ public struct LineChartView: View {
                     .fill(.gray)
                     .frame(width: Constants.circleWidth, height: Constants.circleHeight)
                     .offset(
-                        x: data[index].x * geometry.size.width - 5,
+                        x: data[index].x * geometry.size.width * 10 - 5,
                         y: geometry.size.height - (data[index].y * geometry.size.height) - 5
                     )
             }
             Path { path in
+                print(geometry.size.height)
                 for (index, point) in data.enumerated() {
-                    let x = point.x * Double(geometry.size.width)
+                    let x = point.x * Double(geometry.size.width) * 10
                     let y = geometry.size.height - (point.y * Double(geometry.size.height))
 
                     if index == 0 {
