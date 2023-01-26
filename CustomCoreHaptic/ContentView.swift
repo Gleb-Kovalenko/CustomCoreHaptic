@@ -2,26 +2,21 @@
 //  ContentView.swift
 //  CustomCoreHaptic
 //
-//  Created by Глеб Коваленко on 24.01.2023.
+//  Created by Gleb Kovalenko on 24.01.2023.
 //
 
 import SwiftUI
 import Foundation
 
-struct ContentView: View {
+public struct ContentView: View {
     
     // MARK: - Properties
     
     @State private var selectedHapticType: HapticType = .transient
     @State private var lineChartData = [(x: Double, y: Double)]()
-    @State private var settingsValues = HapticSetting.allCases.reduce(into: [HapticSetting: Double]()) { result, key in
-        switch key {
-        case .intensity, .sharpness:
-            result[key] = Constants.defaultSettingValue
-        case .timing:
-            result[key] = Constants.defaultTimingSettingValue
-        }
-    }
+    @State private var intensitySettingValue: Double = 0.5
+    @State private var sharpnessSettingValue: Double = 0.5
+    @State private var timingSettingValue: Double = 0.1
     
     //Для теста пока оставил, потом уберу
     @State private var testChartData = [(x: 0.0, y: 0.0), (x: 0.1, y: 0.1), (x: 0.13, y: 0.2), (x: 1.0, y: 1.0)]
@@ -30,17 +25,9 @@ struct ContentView: View {
         print("some button clicked")
     }
     
-    // MARK: - Private
-    
-    private func binding(for key: HapticSetting) -> Binding<Double> {
-        return .init(
-            get: { self.settingsValues[key, default: key != .timing ? Constants.defaultSettingValue : Constants.defaultTimingSettingValue] },
-            set: { self.settingsValues[key] = $0 })
-    }
-    
     // MARK: - View
     
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack {
                 Text("Core Haptics")
@@ -136,16 +123,30 @@ struct ContentView: View {
             .padding(Constants.pickerInsets)
             
             VStack(alignment: .leading) {
-                ForEach(settingsValues.sorted{ $0.0.order < $1.0.order }, id: \.key) { setting, value in
-                    HapticSettingView(
-                        hapticSetting: setting,
-                        selectedHapticType: selectedHapticType,
-                        settingValue: binding(for: setting)
-                    )
-                    Divider()
-                        .background(.gray)
-                        .padding()
-                }
+                HapticSettingView(
+                    hapticSetting: .intensity,
+                    selectedHapticType: selectedHapticType,
+                    settingValue: $intensitySettingValue
+                )
+                Divider()
+                    .background(.gray)
+                    .padding()
+                HapticSettingView(
+                    hapticSetting: .sharpness,
+                    selectedHapticType: selectedHapticType,
+                    settingValue: $sharpnessSettingValue
+                )
+                Divider()
+                    .background(.gray)
+                    .padding()
+                HapticSettingView(
+                    hapticSetting: .timing,
+                    selectedHapticType: selectedHapticType,
+                    settingValue: $timingSettingValue
+                )
+                Divider()
+                    .background(.gray)
+                    .padding()
             }
         }
         .padding()

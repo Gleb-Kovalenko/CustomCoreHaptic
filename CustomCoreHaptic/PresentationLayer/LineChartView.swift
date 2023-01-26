@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - LineChartView
 
-struct LineChartView: View {
+public struct LineChartView: View {
     
     // MARK: - Properties
     
@@ -18,7 +18,7 @@ struct LineChartView: View {
 
     // MARK: - View
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             ForEach(0..<data.count) { index in
                 Circle()

@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - HapticSetting
 
-enum HapticSetting: String, CaseIterable {
+public enum HapticSetting: String, CaseIterable {
     
     // MARK: - Cases
     
@@ -20,21 +20,21 @@ enum HapticSetting: String, CaseIterable {
     
     // MARK: - Useful
    
-    func title(selectedHapticType: HapticType) -> String {
+    public func title(selectedHapticType: HapticType) -> String {
         switch selectedHapticType {
         case .dynamic:
             switch self {
             case .intensity, .sharpness:
-                return self.rawValue.capitalizingFirstLetter()
+                return rawValue.capitalizingFirstLetter()
             case .timing:
                 return "Duration"
             }
         default:
-            return self.rawValue.capitalizingFirstLetter()
+            return rawValue.capitalizingFirstLetter()
         }
     }
     
-    var order: Int {
+    public var order: Int {
         switch self {
         case .intensity:
             return 0
@@ -45,7 +45,7 @@ enum HapticSetting: String, CaseIterable {
         }
     }
     
-    var imageName: String {
+    public var imageName: String {
         switch self {
         case .intensity:
             return "bolt"

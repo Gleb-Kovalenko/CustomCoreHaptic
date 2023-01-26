@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - HapticSettingView
 
-struct HapticSettingView: View {
+public struct HapticSettingView: View {
     
     // MARK: - Properties
     
@@ -20,7 +20,7 @@ struct HapticSettingView: View {
     
     // MARK: - View
     
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack(spacing: Constants.infoStackSpacing) {
                 Image(systemName: hapticSetting.imageName)

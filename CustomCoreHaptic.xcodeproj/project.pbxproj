@@ -63,7 +63,7 @@
 		541F636929800C5C002CD5DF /* CustomCoreHaptic */ = {
 			isa = PBXGroup;
 			children = (
-				54EB74DC298051AE00679D27 /* Common */,
+				545C6AE72982580700BA73CC /* CoreLayer */,
 				54EB74D629804E3E00679D27 /* Models */,
 				54EB74D529804DE600679D27 /* PresentationLayer */,
 				541F636A29800C5C002CD5DF /* CustomCoreHapticApp.swift */,
@@ -80,6 +80,14 @@
 				541F637129800C64002CD5DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		545C6AE72982580700BA73CC /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				54EB74DC298051AE00679D27 /* Common */,
+			);
+			path = CoreLayer;
 			sourceTree = "<group>";
 		};
 		54EB74D529804DE600679D27 /* PresentationLayer */ = {

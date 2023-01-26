@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - RectanglesRowView
 
-struct RectanglesRowView: View {
+public struct RectanglesRowView: View {
     
     // MARK: - Properties
     
@@ -18,7 +18,7 @@ struct RectanglesRowView: View {
     
     // MARK: - View
     
-    var body: some View {
+    public var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: selectedHapticType == .transient ? Constants.transientStackSpacing : 0) {
                 ForEach(0..<5) { _ in

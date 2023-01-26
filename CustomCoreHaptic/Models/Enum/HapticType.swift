@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - HapticType
 
-enum HapticType: String, CaseIterable {
+public enum HapticType: String, CaseIterable {
     
     // MARK: - Cases
     
@@ -19,7 +19,7 @@ enum HapticType: String, CaseIterable {
     
     // MARK: - Useful
     
-    var title: String {
-        self.rawValue.capitalizingFirstLetter()
+    public var title: String {
+        rawValue.capitalizingFirstLetter()
     }
 }
