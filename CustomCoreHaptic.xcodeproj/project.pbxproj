@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		541F636B29800C5C002CD5DF /* CustomCoreHapticApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F636A29800C5C002CD5DF /* CustomCoreHapticApp.swift */; };
-		541F636D29800C5C002CD5DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F636C29800C5C002CD5DF /* ContentView.swift */; };
+		541F636D29800C5C002CD5DF /* CoreHapticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F636C29800C5C002CD5DF /* CoreHapticView.swift */; };
 		541F636F29800C64002CD5DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541F636E29800C64002CD5DF /* Assets.xcassets */; };
 		541F637229800C64002CD5DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541F637129800C64002CD5DF /* Preview Assets.xcassets */; };
+		54B8B7C4299130030086A322 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 54B8B7C3299130030086A322 /* Dependencies */; };
+		54B8B7C6299130030086A322 /* TCA in Frameworks */ = {isa = PBXBuildFile; productRef = 54B8B7C5299130030086A322 /* TCA */; };
+		54B8B7D6299151630086A322 /* CoreHapticState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8B7D5299151630086A322 /* CoreHapticState.swift */; };
+		54B8B7D8299151690086A322 /* CoreHapticAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8B7D7299151690086A322 /* CoreHapticAction.swift */; };
+		54B8B7DA299151710086A322 /* CoreHapticFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8B7D9299151710086A322 /* CoreHapticFeature.swift */; };
+		54B8B7DD299152BF0086A322 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8B7DC299152BF0086A322 /* Point.swift */; };
+		54EB74D929804ECB00679D27 /* HapticSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB74D829804ECA00679D27 /* HapticSetting.swift */; };
+		54EB74DF298051EB00679D27 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB74DE298051EA00679D27 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		541F636729800C5C002CD5DF /* CustomCoreHaptic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCoreHaptic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		541F636A29800C5C002CD5DF /* CustomCoreHapticApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCoreHapticApp.swift; sourceTree = "<group>"; };
-		541F636C29800C5C002CD5DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		541F636C29800C5C002CD5DF /* CoreHapticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticView.swift; sourceTree = "<group>"; };
 		541F636E29800C64002CD5DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		541F637129800C64002CD5DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54B8B7D5299151630086A322 /* CoreHapticState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticState.swift; sourceTree = "<group>"; };
+		54B8B7D7299151690086A322 /* CoreHapticAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticAction.swift; sourceTree = "<group>"; };
+		54B8B7D9299151710086A322 /* CoreHapticFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticFeature.swift; sourceTree = "<group>"; };
+		54B8B7DC299152BF0086A322 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		54EB74D829804ECA00679D27 /* HapticSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticSetting.swift; sourceTree = "<group>"; };
+		54EB74DE298051EA00679D27 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B8B7C4299130030086A322 /* Dependencies in Frameworks */,
+				54B8B7C6299130030086A322 /* TCA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +67,10 @@
 		541F636929800C5C002CD5DF /* CustomCoreHaptic */ = {
 			isa = PBXGroup;
 			children = (
+				548F9C212991719000671844 /* PresentationLayer */,
+				545C6AE72982580700BA73CC /* CoreLayer */,
+				54EB74D629804E3E00679D27 /* Models */,
 				541F636A29800C5C002CD5DF /* CustomCoreHapticApp.swift */,
-				541F636C29800C5C002CD5DF /* ContentView.swift */,
 				541F636E29800C64002CD5DF /* Assets.xcassets */,
 				541F637029800C64002CD5DF /* Preview Content */,
 			);
@@ -65,6 +83,74 @@
 				541F637129800C64002CD5DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		545C6AE72982580700BA73CC /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				54EB74DC298051AE00679D27 /* Common */,
+			);
+			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		548F9C212991719000671844 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				54B8B7D4299151330086A322 /* CoreHaptic */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		54B8B7D4299151330086A322 /* CoreHaptic */ = {
+			isa = PBXGroup;
+			children = (
+				541F636C29800C5C002CD5DF /* CoreHapticView.swift */,
+				54B8B7D5299151630086A322 /* CoreHapticState.swift */,
+				54B8B7D7299151690086A322 /* CoreHapticAction.swift */,
+				54B8B7D9299151710086A322 /* CoreHapticFeature.swift */,
+			);
+			path = CoreHaptic;
+			sourceTree = "<group>";
+		};
+		54B8B7DB299152B40086A322 /* Plain */ = {
+			isa = PBXGroup;
+			children = (
+				54B8B7DC299152BF0086A322 /* Point.swift */,
+			);
+			path = Plain;
+			sourceTree = "<group>";
+		};
+		54EB74D629804E3E00679D27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54B8B7DB299152B40086A322 /* Plain */,
+				54EB74D729804E5600679D27 /* Enum */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		54EB74D729804E5600679D27 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				54EB74D829804ECA00679D27 /* HapticSetting.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		54EB74DC298051AE00679D27 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				54EB74DD298051B700679D27 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		54EB74DD298051B700679D27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				54EB74DE298051EA00679D27 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +169,10 @@
 			dependencies = (
 			);
 			name = CustomCoreHaptic;
+			packageProductDependencies = (
+				54B8B7C3299130030086A322 /* Dependencies */,
+				54B8B7C5299130030086A322 /* TCA */,
+			);
 			productName = CustomCoreHaptic;
 			productReference = 541F636729800C5C002CD5DF /* CustomCoreHaptic.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 541F635E29800C5C002CD5DF;
+			packageReferences = (
+				54B8B7C2299130030086A322 /* XCRemoteSwiftPackageReference "TCA" */,
+			);
 			productRefGroup = 541F636829800C5C002CD5DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				541F636D29800C5C002CD5DF /* ContentView.swift in Sources */,
+				54B8B7DA299151710086A322 /* CoreHapticFeature.swift in Sources */,
+				54EB74DF298051EB00679D27 /* String.swift in Sources */,
+				54EB74D929804ECB00679D27 /* HapticSetting.swift in Sources */,
+				54B8B7D8299151690086A322 /* CoreHapticAction.swift in Sources */,
+				541F636D29800C5C002CD5DF /* CoreHapticView.swift in Sources */,
+				54B8B7DD299152BF0086A322 /* Point.swift in Sources */,
+				54B8B7D6299151630086A322 /* CoreHapticState.swift in Sources */,
 				541F636B29800C5C002CD5DF /* CustomCoreHapticApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -269,6 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CustomCoreHaptic/Preview Content\"";
+				DEVELOPMENT_TEAM = H6F8KM7F3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -276,12 +376,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GlebKovalenko.CustomCoreHaptic;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.Gleb-Kovalenko.CustomCoreHaptic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CustomCoreHaptic/Preview Content\"";
+				DEVELOPMENT_TEAM = H6F8KM7F3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -304,12 +406,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GlebKovalenko.CustomCoreHaptic;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.Gleb-Kovalenko.CustomCoreHaptic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,6 +442,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54B8B7C2299130030086A322 /* XCRemoteSwiftPackageReference "TCA" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/monession/TCA";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54B8B7C3299130030086A322 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54B8B7C2299130030086A322 /* XCRemoteSwiftPackageReference "TCA" */;
+			productName = Dependencies;
+		};
+		54B8B7C5299130030086A322 /* TCA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54B8B7C2299130030086A322 /* XCRemoteSwiftPackageReference "TCA" */;
+			productName = TCA;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 541F635F29800C5C002CD5DF /* Project object */;
 }
