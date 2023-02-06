@@ -20,7 +20,7 @@ public enum HapticSetting: String, CaseIterable {
     
     // MARK: - Useful
    
-    public func title(selectedHapticType: HapticType) -> String {
+    public func title(selectedHapticType: CoreHapticState.HapticType) -> String {
         switch selectedHapticType {
         case .dynamic:
             switch self {

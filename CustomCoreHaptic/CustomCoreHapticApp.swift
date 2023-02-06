@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import TCA
 
 @main
 struct CustomCoreHapticApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoreHapticView(store:
+                Store(
+                    initialState: CoreHapticState(),
+                    reducer: CoreHapticFeature()
+                )
+            )
         }
     }
 }
